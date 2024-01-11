@@ -5,9 +5,10 @@ import PropTypes from 'prop-types';
 function NewProductForm(props) {
   function handleNewProductFormSubmission(event) {
     event.preventDefault();
-    props.onProductCreation({
+    props.onNewProductCreation({
       name: event.target.name.value,
       quantity: event.target.quantity.value,
+      purchased: false,
       id: uuidv4()
     });
   }
@@ -20,6 +21,12 @@ function NewProductForm(props) {
         name='name'
         placeholder='Product Name'
         id="name" />
+      <label htmlFor="price">$Price$</label>
+      <input 
+        type='number'
+        name='price'
+        placeholder='Price'
+        id="price" />
       <label htmlFor="quantity">Quantity</label>
       <input
         type='number'

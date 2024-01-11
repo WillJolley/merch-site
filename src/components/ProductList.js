@@ -1,5 +1,6 @@
 import React from "react";
 import Product from './Product';
+import PropTypes from 'prop-types';
 
 
 function ProductList(props) {
@@ -12,7 +13,9 @@ function ProductList(props) {
           name={product.name}
           quantity={product.quantity}
           id={product.id}
-          key={product.id} />
+          key={product.id}
+          onPurchase ={props.onPurchase}
+        />
       )}
     </>
   )
